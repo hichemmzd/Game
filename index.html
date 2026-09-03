@@ -54,7 +54,7 @@
     display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono', monospace;
     font-size:1rem; font-weight:600; padding:7px 16px; border-radius:999px;
     border:1px solid var(--line); background:var(--surface); color:var(--text);
-    transition:all .25s ease;
+    transition:all .30s ease;
   }
   .timer-badge svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2;}
   .timer-badge.warning{
@@ -234,7 +234,7 @@
   <div class="header-actions">
     <div class="timer-badge hidden" id="timerBox">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span id="timerText">25s</span>
+      <span id="timerText">30s</span>
     </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
@@ -415,7 +415,7 @@
   const screens = ['intro','1','2','3','4','5','outro'];
   const timerBox = document.getElementById('timerBox');
   const timerText = document.getElementById('timerText');
-  let timeLeft = 25;
+  let timeLeft = 30;
   let timerInterval = null;
   let currentLevel = 'intro';
 
@@ -428,7 +428,7 @@
 
   function startGlobalTimer() {
     stopTimer();
-    timeLeft = 25;
+    timeLeft = 30;
     timerText.textContent = timeLeft + 's';
     timerBox.classList.remove('warning');
     
@@ -457,7 +457,7 @@
     
     if (nextBtn) nextBtn.classList.add('hidden');
     if (fb) {
-      fb.textContent = "Time's up! The 25 seconds ran out. Click 'Try again' to restart the challenge.";
+      fb.textContent = "Time's up! The 30 seconds ran out. Click 'Try again' to restart the challenge.";
       fb.className = "feedback show bad-fb";
     }
     if (retryBtn) retryBtn.classList.remove('hidden');
